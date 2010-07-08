@@ -30,12 +30,17 @@ class MessagesController < ApplicationController
       end
 
       emails = Mail.all
+      message_ids = []
             
       emails.each do |email|  
-          matched_terms = match(email,search_terms)
+          message_id = match(email,search_terms)
+          #only stores ids that are not nil
+        if message_id != nil
+          message_ids << message_id
+        end
       end
       
-      redirect_to :controller => "messages", :action => :show
+      redirect_to :controller => "messages", :action => :show, :message_ids => message_ids
     end
     
     
@@ -54,10 +59,17 @@ class MessagesController < ApplicationController
        matched_terms = tokens & search_terms
        
        if matched_terms.count != 0
-       Message.create(:mail_from => email.from, :subject => email.subject, :body => email.body.decoded, :matched => matched_terms.join(","))
+       message = Message.create(:mail_from => email.from, :subject => email.subject, :body => email.body.decoded,
+        :matched => matched_terms.join(","))     
        end
        
-       return matched_terms
+       # returns nil if there is no message created else returns the message id.
+       if message == nil
+       return nil
+     else
+       return message.id
+     end
+     
      end
         
         

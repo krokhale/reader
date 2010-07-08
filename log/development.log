@@ -1692,3 +1692,172 @@ Migrating to AddMatched (20100708043724)
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddMatched (20100708043724)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (106.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime, "matched" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "messages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_messages")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "altered_messages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100708043724'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+Migrating to AddMatched (20100708043724)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "messages" ADD "matched" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "messages" ADD "read" boolean[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100708043724')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddMatched (20100708043724)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (65.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime, "matched" varchar(255), "read" boolean) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "messages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime, "read" boolean) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_messages")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "altered_messages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime, "read" boolean) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "messages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_messages")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_messages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100708043724'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+Migrating to AddMatched (20100708043724)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "messages" ADD "matched" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100708043724')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("messages")[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 01:33:21) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 01:33:38) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mMessage Create (0.5ms)[0m   [0;1mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('--- !seq:Mail::AddressContainer 
+- krishna.rokhale@gmail.com
+', '2010-07-08 05:33:41', 'hiya hiya', '2010-07-08 05:33:41', 'hiya', 'hiya')[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=1
+Completed in 3404ms (DB: 1) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 01:33:41) [GET]
+  Parameters: {"message_ids"=>["1"]}
+Rendering template within layouts/messages
+Rendering messages/show
+
+ActionView::TemplateError (undefined method `mail_from' for []:Array) on line #3 of app/views/messages/show.html.erb:
+1: <p>
+2:   <b>Mail from:</b>
+3:   <%=h @mail.mail_from %>
+4: </p>
+5: 
+6: <p>
+
+    app/views/messages/show.html.erb:3
+    app/controllers/messages_controller.rb:87:in `show'
+
+Rendered rescues/_trace (132.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mMessage Load (0.0ms)[0m   [0mSQLite3::SQLException: database schema has changed: SELECT * FROM "messages" [0m
+  [4;36;1mMessage Load (65.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mSQL (35.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (17.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" LIMIT 1[0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" LIMIT 1[0m
