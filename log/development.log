@@ -1,0 +1,1664 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100707123618')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 08:36:40) [GET]
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 08:38:15) [GET]
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-07-07 08:38:17) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-07-07 08:38:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"QLLRVUrjhGB/AZwRUqKILZfXhl9Z/XD4ILNvzX8RxDc=", "account"=>{"username"=>"temp.nav.chat", "password"=>"tempnavchat"}}
+  [4;36;1mAccount Create (0.5ms)[0m   [0;1mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-07 12:38:40', '2010-07-07 12:38:40', 'temp.nav.chat', 'tempnavchat')[0m
+Redirected to http://localhost:3000/accounts/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/accounts]
+
+
+Processing AccountsController#show (for 127.0.0.1 at 2010-07-07 08:38:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendering template within layouts/accounts
+Rendering accounts/show
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/1]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 08:38:42) [GET]
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:11:10) [GET]
+Rendering home/index
+Completed in 23ms (View: 22, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:11:41) [GET]
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:11:58) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:13:08) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:13:36) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:13:49) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:14:31) [GET]
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:14:32) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:14:42) [GET]
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:15:19) [GET]
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:16:19) [GET]
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "mails" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100707131852')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("mails")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:19:04) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:19:05) [GET]
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 09:19:10) [GET]
+  [4;36;1mMail Load (0.4ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/mails]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:19:20) [GET]
+Rendering home/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:22:13) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 09:22:16) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 09:22:48) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:25:19) [GET]
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MailsController#show (for 127.0.0.1 at 2010-07-07 09:25:20) [GET]
+  Parameters: {"id"=>"get"}
+  [4;35;1mMail Load (0.1ms)[0m   [0mSELECT * FROM "mails" WHERE ("mails"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Mail with ID=get):
+  app/controllers/mails_controller.rb:20:in `show'
+
+Rendered rescues/_trace (35.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mMail Create (0.8ms)[0m   [0mINSERT INTO "mails" ("mail_from", "created_at", "body", "updated_at", "subject") VALUES('krishna.rokhale@gmail.com', '2010-07-07 13:27:22', NULL, '2010-07-07 13:27:22', 'Test')[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:27:26) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:27:43) [GET]
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 09:27:45) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/mails
+Rendering mails/get
+Completed in 73ms (View: 5, DB: 0) | 200 OK [http://localhost/mails/get/1]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 09:31:11) [GET]
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 09:31:13) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 09:32:53) [GET]
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 09:58:00) [GET]
+  [4;36;1mMail Load (37.3ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 1469ms (View: 1120, DB: 37) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:00:13) [GET]
+  [4;35;1mMail Load (0.7ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 240ms (View: 206, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:00:14) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:06:05) [GET]
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+ERROR: compiling _run_erb_app47views47mails47index46html46erb RAISED compile error
+/Users/krokhale/code/reader/app/views/mails/index.html.erb:15: syntax error, unexpected ';', expecting ')'
+...lect(:mail, :mail_from).to_s); @output_buffer.concat "\n\t</...
+                              ^
+Function body:           def _run_erb_app47views47mails47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Mail Reader::Mails</h1>\n\n\n"
+
+
+;  form_tag(:controller => "mails", :action => :get) do ; @output_buffer.concat "\n\n<p>Mail From <br />\n  "
+
+
+; @output_buffer.concat(( text_field_tag(:mail_from) ).to_s); @output_buffer.concat "\n</p>\n\n<p> Search Terms <br />\n\t"
+
+
+
+; @output_buffer.concat(( text_field_tag(:search_terms) ).to_s); @output_buffer.concat "\n  </p>\n\n<p>Account <br />\n\t"
+
+
+
+; @output_buffer.concat(( select(:mail, :mail_from).to_s); @output_buffer.concat "\n\t</p>\n\t\n  "
+
+
+; @output_buffer.concat(( submit_tag("Get Mail") ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/krokhale/code/reader/app/views/mails/index.html.erb:24:in `compile!'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/krokhale/code/reader/app/controllers/mails_controller.rb:7:in `index'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/krokhale/code/reader/app/views/mails/index.html.erb:15: syntax error, unexpected ';', expecting ')'
+...lect(:mail, :mail_from).to_s); @output_buffer.concat "\n\t</...
+                              ^) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: 	<%= select(:mail, :mail_from%>
+16: 	</p>
+17: 	
+18:   <%= submit_tag("Get Mail") %>
+
+    app/views/mails/index.html.erb:24:in `compile!'
+    app/controllers/mails_controller.rb:7:in `index'
+
+Rendered rescues/_trace (246.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:06:13) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+ERROR: compiling _run_erb_app47views47mails47index46html46erb RAISED compile error
+/Users/krokhale/code/reader/app/views/mails/index.html.erb:15: syntax error, unexpected ';', expecting ')'
+...lect(:mail, :mail_from).to_s); @output_buffer.concat "\n\t</...
+                              ^
+Function body:           def _run_erb_app47views47mails47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Mail Reader::Mails</h1>\n\n\n"
+
+
+;  form_tag(:controller => "mails", :action => :get) do ; @output_buffer.concat "\n\n<p>Mail From <br />\n  "
+
+
+; @output_buffer.concat(( text_field_tag(:mail_from) ).to_s); @output_buffer.concat "\n</p>\n\n<p> Search Terms <br />\n\t"
+
+
+
+; @output_buffer.concat(( text_field_tag(:search_terms) ).to_s); @output_buffer.concat "\n  </p>\n\n<p>Account <br />\n\t"
+
+
+
+; @output_buffer.concat(( select(:mail, :mail_from).to_s); @output_buffer.concat "\n\t</p>\n\t\n  "
+
+
+; @output_buffer.concat(( submit_tag("Get Mail") ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/krokhale/code/reader/app/views/mails/index.html.erb:24:in `compile!'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/krokhale/code/reader/app/controllers/mails_controller.rb:7:in `index'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/krokhale/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Users/krokhale/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/krokhale/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/krokhale/code/reader/app/views/mails/index.html.erb:15: syntax error, unexpected ';', expecting ')'
+...lect(:mail, :mail_from).to_s); @output_buffer.concat "\n\t</...
+                              ^) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: 	<%= select(:mail, :mail_from%>
+16: 	</p>
+17: 	
+18:   <%= submit_tag("Get Mail") %>
+
+    app/views/mails/index.html.erb:24:in `compile!'
+    app/controllers/mails_controller.rb:7:in `index'
+
+Rendered rescues/_trace (127.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:07:58) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "mails" [0m
+
+ActionView::TemplateError (wrong number of arguments (2 for 3)) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: <%= options_from_collection_for_select(Mail.all, :id) %>	</p>
+16:   <%= submit_tag("Get Mail") %>
+17: <% end %>
+
+    app/views/mails/index.html.erb:15:in `options_from_collection_for_select'
+    app/views/mails/index.html.erb:15
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:7:in `index'
+
+Rendered rescues/_trace (50.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:08:19) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "mails" [0m
+
+ActionView::TemplateError (undefined method `from_address' for #<Mail:0x1040e85f8>) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: <%= options_from_collection_for_select(Mail.all, :id, :from_address) %>	</p>
+16:   <%= submit_tag("Get Mail") %>
+17: <% end %>
+
+    app/views/mails/index.html.erb:15
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:7:in `index'
+
+Rendered rescues/_trace (68.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:24:35) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/mails]
+  [4;36;1mMail Create (33.0ms)[0m   [0;1mINSERT INTO "mails" ("mail_from", "created_at", "body", "updated_at", "subject") VALUES('krishna.rokhale@yahoo.com', '2010-07-07 14:26:19', NULL, '2010-07-07 14:26:19', 'Test')[0m
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:26:27) [GET]
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:26:47) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "mails" [0m
+
+ActionView::TemplateError (undefined method `collection_for_select' for #<ActionView::Base:0x1040e2090>) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: <%= collection_for_select(Mail.all, :id, :mail_from) %>	</p>
+16:   <%= submit_tag("Get Mail") %>
+17: <% end %>
+
+    app/views/mails/index.html.erb:15
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:7:in `index'
+
+Rendered rescues/_trace (51.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:28:23) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 54ms (View: 49, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:28:43) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 27ms (View: 22, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:29:03) [GET]
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 90ms (View: 9, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:29:21) [GET]
+  [4;36;1mMail Load (0.7ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 10:30:17) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 10:30:19) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 91ms (View: 48, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:30:29) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:31:02) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 22ms (View: 4, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:31:04) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 10:31:33) [GET]
+  [4;35;1mMail Load (0.5ms)[0m   [0mSELECT * FROM "mails" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 83ms (View: 76, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 10:46:24) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "stuff"=>{"item_id"=>"1"}, "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "search_terms"=>""}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 10:46:31) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "stuff"=>{"item_id"=>"1"}, "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "search_terms"=>"sadasd,asdasd"}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (119.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 10:46:50) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "stuff"=>{"item_id"=>"1"}, "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "search_terms"=>"sadasd,asdasd"}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:18:19) [GET]
+  [4;36;1mMail Load (1.0ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (14.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 948ms (View: 862, DB: 15) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 11:18:24) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "stuff"=>{"item_id"=>"1"}, "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "search_terms"=>"sadasd,asdasd"}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (68.6ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:19:36) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (14.9ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+
+ActionView::TemplateError (wrong number of arguments (5 for 4)) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: <%= options_from_collection_for_select("stuff", "item_id", @accounts, :id, :username ) %>
+16: </p>
+17:   <%= submit_tag("Get Mail") %>
+18: <% end %>
+
+    app/views/mails/index.html.erb:15:in `options_from_collection_for_select'
+    app/views/mails/index.html.erb:15
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:8:in `index'
+
+Rendered rescues/_trace (50.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:19:56) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (13.8ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+
+ActionView::TemplateError ([#<Account id: 1, username: "temp.nav.chat", password: "tempnavchat", created_at: "2010-07-07 12:38:40", updated_at: "2010-07-07 12:38:40">] is not a symbol) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: <%= options_from_collection_for_select("item_id", @accounts, :id, :username ) %>
+16: </p>
+17:   <%= submit_tag("Get Mail") %>
+18: <% end %>
+
+    app/views/mails/index.html.erb:15
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:8:in `index'
+
+Rendered rescues/_trace (185.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:21:53) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (16.0ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 34ms (View: 11, DB: 16) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:23:16) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+
+NoMethodError (undefined method `from_mail' for #<Account:0x10431d210>):
+  app/controllers/mails_controller.rb:6:in `index'
+  app/controllers/mails_controller.rb:6:in `map'
+  app/controllers/mails_controller.rb:6:in `index'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:23:38) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+
+NoMethodError (undefined method `mail_from' for #<Account:0x104145c80>):
+  app/controllers/mails_controller.rb:6:in `index'
+  app/controllers/mails_controller.rb:6:in `map'
+  app/controllers/mails_controller.rb:6:in `index'
+
+Rendered rescues/_trace (109.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:23:40) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+
+NoMethodError (undefined method `mail_from' for #<Account:0x104363800>):
+  app/controllers/mails_controller.rb:6:in `index'
+  app/controllers/mails_controller.rb:6:in `map'
+  app/controllers/mails_controller.rb:6:in `index'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:23:56) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 60ms (View: 52, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 11:24:03) [GET]
+Rendering home/index
+Completed in 29ms (View: 27, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 11:24:04) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 73ms (View: 68, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-07-07 11:24:06) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/new
+Completed in 179ms (View: 174, DB: 0) | 200 OK [http://localhost/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-07-07 11:24:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "account"=>{"username"=>"tester", "password"=>"tester"}}
+  [4;35;1mAccount Create (0.4ms)[0m   [0mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-07 15:24:12', '2010-07-07 15:24:12', 'tester', 'tester')[0m
+Redirected to http://localhost:3000/accounts/2
+Completed in 55ms (DB: 0) | 302 Found [http://localhost/accounts]
+
+
+Processing AccountsController#show (for 127.0.0.1 at 2010-07-07 11:24:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+Rendering template within layouts/accounts
+Rendering accounts/show
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/accounts/2]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-07 11:24:14) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/accounts]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:24:19) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:27:58) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (15.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+
+ActionView::TemplateError (undefined method `username' for ["temp.nav.chat", 1]:Array) on line #17 of app/views/mails/index.html.erb:
+14: <p>Account <br />
+15: <%#= options_from_collection_for_select("item_id", @accounts, :id, :username ) %>
+16: <%#= options_for_select(@accounts) %>
+17: <%= select("username","id", @accounts.map {|u| [u.username,u.id]}) %>
+18: </p>
+19:   <%= submit_tag("Get Mail") %>
+20: <% end %>
+
+    app/views/mails/index.html.erb:17
+    app/views/mails/index.html.erb:17:in `map'
+    app/views/mails/index.html.erb:17
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:8:in `index'
+
+Rendered rescues/_trace (50.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:28:57) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+
+ActionView::TemplateError (undefined method `username' for ["temp.nav.chat", 1]:Array) on line #17 of app/views/mails/index.html.erb:
+14: <p>Account <br />
+15: <%#= options_from_collection_for_select("item_id", @accounts, :id, :username ) %>
+16: <%#= options_for_select(@accounts) %>
+17: <%= select("id", @accounts.map {|u| [u.username,u.id]}) %>
+18: </p>
+19:   <%= submit_tag("Get Mail") %>
+20: <% end %>
+
+    app/views/mails/index.html.erb:17
+    app/views/mails/index.html.erb:17:in `map'
+    app/views/mails/index.html.erb:17
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:8:in `index'
+
+Rendered rescues/_trace (133.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:28:58) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (15.0ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+
+ActionView::TemplateError (undefined method `username' for ["temp.nav.chat", 1]:Array) on line #17 of app/views/mails/index.html.erb:
+14: <p>Account <br />
+15: <%#= options_from_collection_for_select("item_id", @accounts, :id, :username ) %>
+16: <%#= options_for_select(@accounts) %>
+17: <%= select("id", @accounts.map {|u| [u.username,u.id]}) %>
+18: </p>
+19:   <%= submit_tag("Get Mail") %>
+20: <% end %>
+
+    app/views/mails/index.html.erb:17
+    app/views/mails/index.html.erb:17:in `map'
+    app/views/mails/index.html.erb:17
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:8:in `index'
+
+Rendered rescues/_trace (131.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:29:30) [GET]
+  [4;36;1mMail Load (0.6ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 11:29:35) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "username"=>{"id"=>"2"}, "search_terms"=>""}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 11:30:31) [GET]
+Rendering home/index
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 11:30:36) [GET]
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (26.1ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 147ms (View: 113, DB: 27) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 11:31:14) [POST]
+  Parameters: {"mail_from"=>"krishna@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "username"=>{"id"=>"1"}, "search_terms"=>"asda,asd,asd"}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 12:06:15) [POST]
+  Parameters: {"mail_from"=>"krishna@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "username"=>{"id"=>"1"}, "search_terms"=>"asda,asd,asd"}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (150.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 12:06:46) [GET]
+  [4;36;1mMail Load (1.3ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (18.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+
+ActionView::TemplateError (wrong number of arguments (2 for 3)) on line #15 of app/views/mails/index.html.erb:
+12:   </p>
+13: 
+14: <p>Account <br />
+15: <%= select("id", @accounts.map {|u| [u.username,u.id]}) %>
+16: </p>
+17:   <%= submit_tag("Get Mail") %>
+18: <% end %>
+
+    app/views/mails/index.html.erb:15:in `select'
+    app/views/mails/index.html.erb:15
+    app/views/mails/index.html.erb:4
+    app/controllers/mails_controller.rb:8:in `index'
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MailsController#index (for 127.0.0.1 at 2010-07-07 12:12:46) [GET]
+  [4;36;1mMail Load (11.3ms)[0m   [0;1mSELECT * FROM "mails" [0m
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/mails
+Rendering mails/index
+Completed in 424ms (View: 404, DB: 12) | 200 OK [http://localhost/mails]
+
+
+Processing MailsController#get (for 127.0.0.1 at 2010-07-07 12:12:48) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"5FwFWasIM16NJg5gTusx5CEOAcO5EiUmqpdy9vNBLR8=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+Rendering template within layouts/mails
+Rendering mails/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/mails/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/mails/get.html.erb:15
+
+Rendered rescues/_trace (72.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mAccount Load (1.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mSQL (18.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMails (20100707131852)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (36.2ms)[0m   [0mDROP TABLE "mails"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100707131852'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100707131852')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMails (20100707131852)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (49.1ms)[0m   [0mDROP TABLE "messages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100707131852'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (23.8ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100707131852')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-07 13:53:03) [GET]
+
+NameError (uninitialized constant MailsController):
+  
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-07 13:53:16) [GET]
+
+ActionController::RoutingError (No route matches "/messages" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-07 13:53:35) [GET]
+
+LoadError (Expected /Users/krokhale/code/reader/app/controllers/messages_controller.rb to define MessagesController):
+  
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:54:01) [GET]
+
+NameError (uninitialized constant MessagesController::Mail):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:54:59) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (110.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:55:00) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:55:01) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:55:02) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:55:44) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:55:46) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (106.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:55:47) [GET]
+
+NameError (uninitialized constant MessagesController::Messages):
+  app/controllers/messages_controller.rb:5:in `index'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:56:13) [GET]
+  [4;36;1mMessage Load (12.6ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering messages/index
+Completed in 135ms (View: 75, DB: 13) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 13:56:45) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 90ms (View: 83, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 22:39:50) [GET]
+Rendering home/index
+Completed in 432ms (View: 299, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-07 22:39:54) [GET]
+
+NameError (uninitialized constant MailsController):
+  
+
+Rendered rescues/_trace (283.2ms)
+Rendered rescues/_request_and_response (20.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-07 22:43:57) [GET]
+Rendering home/index
+Completed in 38ms (View: 35, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:43:59) [GET]
+  [4;36;1mMessage Load (24.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (12.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 468ms (View: 333, DB: 37) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:44:10) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 32ms (View: 6, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get (for 127.0.0.1 at 2010-07-07 22:44:24) [POST]
+  Parameters: {"mail_from"=>"asdasd,asdasda", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"sdasd,asdasd"}
+Rendering template within layouts/messages
+Rendering messages/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/messages/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/messages/get.html.erb:15
+
+Rendered rescues/_trace (47.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get (for 127.0.0.1 at 2010-07-07 22:48:54) [POST]
+  Parameters: {"mail_from"=>"asdasd,asdasda", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"sdasd,asdasd"}
+Rendering template within layouts/messages
+Rendering messages/get
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #15 of app/views/messages/get.html.erb:
+12:     <th>Attachments</th>
+13:   </tr>
+14: 
+15: <% @emails.each do |email| %>
+16:   <tr>
+17:     <td><%=h email.subject %></td>
+18:     <td><%=h email.body %></td>
+
+    app/views/messages/get.html.erb:15
+
+Rendered rescues/_trace (123.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get (for 127.0.0.1 at 2010-07-07 22:49:35) [POST]
+  Parameters: {"mail_from"=>"asdasd,asdasda", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"sdasd,asdasd"}
+Rendering template within layouts/messages
+Rendering messages/get
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/get]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:50:22) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get (for 127.0.0.1 at 2010-07-07 22:50:24) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+Rendering template within layouts/messages
+Rendering messages/get
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/get]
+
+
+Processing MessagesController#get (for 127.0.0.1 at 2010-07-07 22:51:27) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+Rendering template within layouts/messages
+Rendering messages/get
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/get]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:51:31) [GET]
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-07 22:51:32) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 4057ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:51:36) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-07 22:52:03) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 1987ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:52:05) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:52:43) [GET]
+  [4;36;1mMessage Load (0.7ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 17ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-07 22:52:45) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 1768ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:52:47) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-07 22:52:49) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 1501ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:52:50) [GET]
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:53:15) [GET]
+  [4;36;1mMessage Load (1.1ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-07 22:53:17) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 1403ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:53:19) [GET]
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 38ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-07 22:54:19) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 1614ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-07 22:54:20) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 00:19:04) [POST]
+  Parameters: {"mail_from"=>"krishna,krishna", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"asd,asda"}
+  [4;36;1mAccount Load (22.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages
+Completed in 2503ms (DB: 22) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 00:19:06) [GET]
+  [4;35;1mMessage Load (21.1ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 33ms (View: 5, DB: 22) | 200 OK [http://localhost/messages]
