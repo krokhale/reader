@@ -32,14 +32,14 @@ class MessagesController < ApplicationController
       emails = Mail.all
             
       emails.each do |email|  
-          matched_terms = match(email.subject,email.body,search_terms)
+          matched_terms = match(email,search_terms)
       end
       
-      redirect_to :back
+      redirect_to :controller => "messages", :action => :show
     end
     
     
-    def match(subject,body,search_terms)
+    def match(email,search_terms)
       
       tokens = []
     
@@ -52,6 +52,10 @@ class MessagesController < ApplicationController
         end
         
        matched_terms = tokens & search_terms
+       
+       if matched_terms.count != 0
+       Message.create(:mail_from => email.from, :subject => email.subject, :body => email.body.decoded, :matched => matched_terms.join(","))
+       end
        
        return matched_terms
      end

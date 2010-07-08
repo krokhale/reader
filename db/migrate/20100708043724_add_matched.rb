@@ -1,7 +1,10 @@
 class AddMatched < ActiveRecord::Migration
-  def self.up
-  end
+  
+   def self.up
+      add_column :messages, :matched, :string
+    end
 
-  def self.down
+    def self.down
+      remove_column :messages, :matched
+    end
   end
-end
