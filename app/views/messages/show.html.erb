@@ -7,20 +7,43 @@
     <th >Subject</th>
     <th>Body</th>
     <th>From</th>
-    <th>Matched Terms</th>
   </tr>
 
 <% @messages.each do |message| %>
   <tr>
 
-    <td width=50><%=h truncate(message.subject, :length => 15) %></td>
-    <td><%=h truncate(message.body, :length => 15) %></td>
-    <td><%=h truncate(message.mail_from, :length => 15) %></td>
-    <td><%=h truncate(message.matched, :length => 15) %></td>
-
+    <td width=50><%=h message.subject %></td>
+    <td><%=h message.body %></td>
+    <td><%=h message.mail_from %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-<%= link_to 'Search', :controller => "messages", :action => :search %>
+
+<p>
+	<% form_remote_tag(:url => {:action => :match_terms, :message_ids => params[:message_ids], :all_terms => true }) do %>
+
+    <%= submit_tag "Search Against all terms" %>
+
+<%end %>
+</p>
+
+<br />
+
+Define New search terms:
+
+<p>
+	
+	
+	<% form_remote_tag(:url => {:action => :match_terms, :message_ids => params[:message_ids], :all_terms => false }) do %>
+  <%= text_area_tag(:search_terms) %> <br /><br />
+
+ <%= submit_tag "Search" %>
+    <%end %>
+	
+</p>
+
+<p id="updated"></p>
+
+

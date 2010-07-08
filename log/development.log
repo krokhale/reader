@@ -3561,3 +3561,1735 @@ Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 06:46:18) [GET]
 Rendering template within layouts/accounts
 Rendering accounts/index
 Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 10:54:09) [GET]
+Rendering home/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 10:54:13) [GET]
+  [4;36;1mMessage Load (0.6ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 10:54:19) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 10:54:27) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 10:54:31) [GET]
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 10:55:55) [GET]
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 10:56:02) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 3088ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 10:56:05) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 11:12:48) [GET]
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 11:42:41) [GET]
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+Migrating to AddMatched (20100708043724)
+Migrating to AddCron (20100708092745)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "crons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_ids" varchar(255), "terms" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100708092745')[0m
+Migrating to CreateTerms (20100708154417)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "terms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "str" varchar(255), "message_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100708154417')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("crons")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("terms")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTerms (20100708154417)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (30.2ms)[0m   [0mDROP TABLE "terms"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100708154417'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("crons")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+Migrating to AddMatched (20100708043724)
+Migrating to AddCron (20100708092745)
+Migrating to CreateTerms (20100708154417)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "terms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "str" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100708154417')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("crons")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("terms")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 11:49:40) [GET]
+Rendering home/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing TermsController#index (for 127.0.0.1 at 2010-07-08 11:49:42) [GET]
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/terms
+Rendering terms/index
+Completed in 86ms (View: 81, DB: 0) | 200 OK [http://localhost/terms]
+
+
+Processing TermsController#index (for 127.0.0.1 at 2010-07-08 11:50:26) [GET]
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/terms
+Rendering terms/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/terms]
+
+
+Processing TermsController#new (for 127.0.0.1 at 2010-07-08 11:50:29) [GET]
+Rendering template within layouts/terms
+Rendering terms/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/terms/new]
+
+
+Processing TermsController#create (for 127.0.0.1 at 2010-07-08 11:50:33) [POST]
+  Parameters: {"commit"=>"Create", "term"=>{"str"=>"test"}, "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;35;1mTerm Create (0.4ms)[0m   [0mINSERT INTO "terms" ("created_at", "updated_at", "str") VALUES('2010-07-08 15:50:33', '2010-07-08 15:50:33', 'test')[0m
+Redirected to http://localhost:3000/terms/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/terms]
+
+
+Processing TermsController#show (for 127.0.0.1 at 2010-07-08 11:50:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms"."id" = 1) [0m
+Rendering template within layouts/terms
+Rendering terms/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/terms/1]
+
+
+Processing TermsController#index (for 127.0.0.1 at 2010-07-08 11:50:34) [GET]
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/terms
+Rendering terms/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/terms]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 11:50:51) [GET]
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 11:54:14) [GET]
+  [4;36;1mMessage Load (0.6ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 11:54:32) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split):
+  app/controllers/messages_controller.rb:21:in `get_mail'
+
+Rendered rescues/_trace (110.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 12:06:58) [GET]
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 12:07:04) [POST]
+  Parameters: {"mail_from"=>"asdas@asd.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2717ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:07:06) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 12:08:00) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('krishna.rokhale@gmail.com', '2010-07-08 16:08:05', 'hola.', '2010-07-08 16:08:05', 'hiya', NULL)[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=2
+Completed in 5203ms (DB: 1) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:08:05) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/messages/show?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:10:26) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:10:27) [GET]
+  Parameters: {"reveal"=>"true"}
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:17:18) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#search_terms (for 127.0.0.1 at 2010-07-08 12:17:25) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+
+ActionController::UnknownAction (No action responded to search_terms. Actions: create, destroy, edit, get_mail, index, match_id, match_terms, new, search, search_mail, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:18:00) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:19:37) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 39ms (View: 34, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:19:59) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;35;1mTerm Load (0.7ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 43ms (View: 37, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:20:01) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 56ms (View: 49, DB: 0) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:20:46) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;35;1mTerm Load (0.6ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 90ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:20:48) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:22:25) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;35;1mTerm Load (0.8ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+
+ActionView::TemplateError (undefined method `sent' for nil:NilClass) on line #30 of app/views/messages/show.html.erb:
+27: <% form_remote_tag(:url => {:action => :search_terms, :message_ids => params[:message_ids] }) do %>
+28: <p>
+29: 	<% @terms.each do |term| %>
+30:     <%= check_box "page", "sent", :checked => @page.sent %> <br />
+31:      <%end%>
+32:     <%= submit_tag "Search" %>
+33: </p>
+
+    app/views/messages/show.html.erb:30
+    app/views/messages/show.html.erb:29:in `each'
+    app/views/messages/show.html.erb:29
+    app/views/messages/show.html.erb:27
+    app/controllers/messages_controller.rb:100:in `show'
+
+Rendered rescues/_trace (50.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:22:58) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:23:48) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#search_terms (for 127.0.0.1 at 2010-07-08 12:24:18) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "test"=>"1"}
+
+ActionController::UnknownAction (No action responded to search_terms. Actions: create, destroy, edit, get_mail, index, match_id, match_terms, new, search, search_mail, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#search_terms (for 127.0.0.1 at 2010-07-08 12:25:03) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "test"=>"1"}
+
+ActionController::UnknownAction (No action responded to search_terms. Actions: create, destroy, edit, get_mail, index, match_id, match_terms, new, search, search_mail, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:25:16) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (2.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 9, DB: 2) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#search_terms (for 127.0.0.1 at 2010-07-08 12:25:18) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+
+ActionController::UnknownAction (No action responded to search_terms. Actions: create, destroy, edit, get_mail, index, match_id, match_terms, new, search, search_mail, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#search_terms (for 127.0.0.1 at 2010-07-08 12:25:58) [GET]
+
+ActionController::UnknownAction (No action responded to search_terms. Actions: create, destroy, edit, get_mail, index, match_id, match_terms, new, search, search_mail, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:26:00) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:26:02) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+
+NameError (undefined local variable or method `email' for #<MessagesController:0x104189458>):
+  app/controllers/messages_controller.rb:70:in `match_terms'
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:34:42) [GET]
+  Parameters: {"reveal"=>"true"}
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages/show?reveal=true]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:34:48) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:71:in `match_terms'
+
+Rendered rescues/_trace (123.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:35:06) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:35:08) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NoMethodError (undefined method `decoded' for "hola.":String):
+  app/controllers/messages_controller.rb:82:in `match_terms'
+  app/controllers/messages_controller.rb:76:in `each'
+  app/controllers/messages_controller.rb:76:in `match_terms'
+
+Rendered rescues/_trace (34.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mMessage Load (0.0ms)[0m   [0mSQLite3::SQLException: database schema has changed: SELECT * FROM "messages" LIMIT 1[0m
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" LIMIT 1[0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" LIMIT 1[0m
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" LIMIT 1[0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" LIMIT 1[0m
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:45:51) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 100ms (View: 91, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:45:55) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NoMethodError (undefined method `subject' for "hiya":String):
+  app/controllers/messages_controller.rb:78:in `match_terms'
+  app/controllers/messages_controller.rb:76:in `each'
+  app/controllers/messages_controller.rb:76:in `match_terms'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:52:11) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NoMethodError (undefined method `subject' for "hiya":String):
+  app/controllers/messages_controller.rb:79:in `match_terms'
+  app/controllers/messages_controller.rb:77:in `each'
+  app/controllers/messages_controller.rb:77:in `match_terms'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:54:23) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 96ms (View: 6, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:54:24) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `search_terms' for #<MessagesController:0x10428b888>):
+  app/controllers/messages_controller.rb:85:in `match_terms'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 12:55:14) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "test"=>"1"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `search_terms' for #<MessagesController:0x103ed4988>):
+  app/controllers/messages_controller.rb:85:in `match_terms'
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:58:47) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:59:02) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 12:59:13) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" [0m
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" [0m
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:02:00) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:02:03) [POST]
+  Parameters: {"all_terms"=>"true", "message_ids"=>["2"], "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Redirected to http://localhost:3000/messages/show?message_ids[]=2
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/messages/match_terms?all_terms=true&message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:02:03) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:02:10) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>""}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+TypeError (can't convert String into Array):
+  app/controllers/messages_controller.rb:91:in `&'
+  app/controllers/messages_controller.rb:91:in `match_terms'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:03:04) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"zx"}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+TypeError (can't convert String into Array):
+  app/controllers/messages_controller.rb:91:in `&'
+  app/controllers/messages_controller.rb:91:in `match_terms'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:03:26) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"zx"}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Redirected to http://localhost:3000/messages/show?message_ids[]=2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:03:26) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:03:40) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `update_attribute' for #<Class:0x10411b070>):
+  app/controllers/messages_controller.rb:94:in `match_terms'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:04:23) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Redirected to http://localhost:3000/messages/show?message_ids[]=2
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:04:23) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:05:17) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Redirected to http://localhost:3000/messages/show?message_ids[]=2
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:05:17) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:05:23) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd\r\n"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Redirected to http://localhost:3000/messages/show?message_ids[]=2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:05:23) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:05:31) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hola"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Redirected to http://localhost:3000/messages/show?message_ids[]=2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:05:31) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:05:53) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `matched_term' for #<MessagesController:0x103d09950>):
+  app/controllers/messages_controller.rb:94:in `match_terms'
+
+Rendered rescues/_trace (109.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:13:48) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:13:49) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>""}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:14:05) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya\r\n"}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:14:35) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:14:39) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `matched_terms' for #<ActionView::Base:0x103cc2c08>) on line #3 of app/views/messages/_result.html.erb:
+1: 
+2: <p>
+3: 	<% if matched_terms.count == 0%>
+4: 		No term Matched
+5: 		<%else%>
+6: 		Following Terms Matched:
+
+    app/views/messages/_result.html.erb:3
+    app/controllers/messages_controller.rb:96:in `match_terms'
+    app/controllers/messages_controller.rb:95:in `match_terms'
+    app/controllers/messages_controller.rb:94:in `match_terms'
+
+Rendered rescues/_trace (56.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:15:36) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:17:16) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.1ms)
+Completed in 93ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:17:19) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:17:23) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (3.9ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:18:48) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:18:52) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.1ms)
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:18:58) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiyas"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:18:59) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiyas"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 84ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:19:09) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.1ms)
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:19:50) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.6ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:19:55) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiyaa"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:19:56) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiyaa"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:20:19) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiyaa"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:21:29) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiyaa"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:22:59) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:23:02) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:23:16) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya\n"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:23:17) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya\n"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:23:19) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya\n"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:23:34) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya\n"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:23:37) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:23:40) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.8ms)
+Completed in 84ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:24:10) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:24:13) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"ad"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:24:14) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"ad"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:24:18) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:24:39) [POST]
+  Parameters: {"all_terms"=>"true", "message_ids"=>["2"], "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.3ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://localhost/messages/match_terms?all_terms=true&message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:25:20) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:25:23) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:25:33) [POST]
+  Parameters: {"all_terms"=>"true", "message_ids"=>["2"], "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?all_terms=true&message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:25:41) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:26:15) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:26:18) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"sd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:26:19) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"sd"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:26:19) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"sd"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:28:28) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:28:32) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `count' for #<ActionView::Base:0x104149da8>) on line #3 of app/views/messages/_result.html.erb:
+1: 
+2: <p>
+3: 	<% if count != 0%>
+4: 			Following Terms Matched:
+5: 			<% @matched_terms.each do |term|%> <br />
+6: 				<%= term.to_s %> <br />
+
+    app/views/messages/_result.html.erb:3
+    app/controllers/messages_controller.rb:96:in `match_terms'
+    app/controllers/messages_controller.rb:95:in `match_terms'
+    app/controllers/messages_controller.rb:94:in `match_terms'
+
+Rendered rescues/_trace (137.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:29:29) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:29:32) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asdasd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:29:36) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:29:57) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (2.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 8, DB: 2) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:30:00) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:30:16) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:30:51) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:30:54) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asdas"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:30:57) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:31:29) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:31:32) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asdas"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:33:48) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:33:51) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"dasd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:33:54) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:34:03) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hi"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:18) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hidfsd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:35:21) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:23) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"fsdf"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:27) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `count' for #<ActionView::Base:0x10427c0e0>) on line #3 of app/views/messages/_result.html.erb:
+1: 
+2: <p>
+3: 	<% if count %>
+4: 		No terms Matched.
+5: 		<%else%>
+6: 		
+
+    app/views/messages/_result.html.erb:3
+    app/controllers/messages_controller.rb:100:in `match_terms'
+    app/controllers/messages_controller.rb:99:in `match_terms'
+    app/controllers/messages_controller.rb:98:in `match_terms'
+
+Rendered rescues/_trace (54.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:35:39) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 95ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:42) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:43) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:44) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:35:48) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:36:51) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:36:54) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `terms' for #<ActionView::Base:0x103cfb738>) on line #6 of app/views/messages/_result.html.erb:
+3: 
+4: 		
+5: 			Following Terms Matched:
+6: 			<% terms.each do |term|%> <br />
+7: 				<%= term.to_s %> <br />
+8: 				<%end%>	
+9: 			
+
+    app/views/messages/_result.html.erb:6
+    app/controllers/messages_controller.rb:100:in `match_terms'
+    app/controllers/messages_controller.rb:99:in `match_terms'
+    app/controllers/messages_controller.rb:98:in `match_terms'
+
+Rendered rescues/_trace (53.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:36:58) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (undefined local variable or method `terms' for #<ActionView::Base:0x103dbdb58>) on line #6 of app/views/messages/_result.html.erb:
+3: 
+4: 		
+5: 			Following Terms Matched:
+6: 			<% terms.each do |term|%> <br />
+7: 				<%= term.to_s %> <br />
+8: 				<%end%>	
+9: 			
+
+    app/views/messages/_result.html.erb:6
+    app/controllers/messages_controller.rb:100:in `match_terms'
+    app/controllers/messages_controller.rb:99:in `match_terms'
+    app/controllers/messages_controller.rb:98:in `match_terms'
+
+Rendered rescues/_trace (54.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:37:07) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:37:10) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"dsad"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #6 of app/views/messages/_result.html.erb:
+3: 
+4: 		
+5: 			Following Terms Matched:
+6: 			<% @terms.each do |term|%> <br />
+7: 				<%= term.to_s %> <br />
+8: 				<%end%>	
+9: 			
+
+    app/views/messages/_result.html.erb:6
+    app/controllers/messages_controller.rb:100:in `match_terms'
+    app/controllers/messages_controller.rb:99:in `match_terms'
+    app/controllers/messages_controller.rb:98:in `match_terms'
+
+Rendered rescues/_trace (53.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:37:24) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:37:27) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #6 of app/views/messages/_result.html.erb:
+3: 
+4: 		
+5: 			Following Terms Matched:
+6: 			<% params[:terms].each do |term|%> <br />
+7: 				<%= term.to_s %> <br />
+8: 				<%end%>	
+9: 			
+
+    app/views/messages/_result.html.erb:6
+    app/controllers/messages_controller.rb:100:in `match_terms'
+    app/controllers/messages_controller.rb:99:in `match_terms'
+    app/controllers/messages_controller.rb:98:in `match_terms'
+
+Rendered rescues/_trace (53.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:40:11) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:40:14) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"dasd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `matched_terms' for #<ActionView::Base:0x103dbfef8>):
+  app/controllers/messages_controller.rb:97:in `match_terms'
+  app/controllers/messages_controller.rb:96:in `match_terms'
+  app/controllers/messages_controller.rb:95:in `match_terms'
+
+Rendered rescues/_trace (125.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:40:19) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `matched_terms' for #<ActionView::Base:0x10410b1c0>):
+  app/controllers/messages_controller.rb:97:in `match_terms'
+  app/controllers/messages_controller.rb:96:in `match_terms'
+  app/controllers/messages_controller.rb:95:in `match_terms'
+
+Rendered rescues/_trace (42.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:40:40) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 98ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:40:43) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"dasd"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `matched_terms' for #<ActionView::Base:0x104283688>):
+  app/controllers/messages_controller.rb:97:in `match_terms'
+  app/controllers/messages_controller.rb:96:in `match_terms'
+  app/controllers/messages_controller.rb:95:in `match_terms'
+
+Rendered rescues/_trace (45.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:40:47) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+
+NameError (undefined local variable or method `matched_terms' for #<ActionView::Base:0x103e2dc78>):
+  app/controllers/messages_controller.rb:97:in `match_terms'
+  app/controllers/messages_controller.rb:96:in `match_terms'
+  app/controllers/messages_controller.rb:95:in `match_terms'
+
+Rendered rescues/_trace (121.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:41:16) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:41:18) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"dasd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:41:23) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.1ms)
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:41:37) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;36;1mMessage Load (1.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:41:40) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.7ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:41:44) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.1ms)
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:41:47) [POST]
+  Parameters: {"all_terms"=>"true", "message_ids"=>["2"], "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.3ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendered messages/_result (0.1ms)
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/messages/match_terms?all_terms=true&message_ids%5B%5D=2]
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" [0m
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:43:23) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.2ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:43:25) [POST]
+  Parameters: {"all_terms"=>"true", "message_ids"=>["2"], "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.2ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendered messages/_result (0.1ms)
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?all_terms=true&message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:44:18) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"hiya"}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Create (0.4ms)[0m   [0;1mINSERT INTO "terms" ("created_at", "updated_at", "str") VALUES('2010-07-08 17:44:18', '2010-07-08 17:44:18', 'hiya')[0m
+Rendered messages/_result (8.1ms)
+Completed in 95ms (View: 86, DB: 1) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:44:58) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:45:32) [GET]
+  Parameters: {"message_ids"=>["2"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mTerm Load (0.3ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 20ms (View: 11, DB: 1) | 200 OK [http://localhost/messages/show?message_ids[]=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:45:34) [POST]
+  Parameters: {"all_terms"=>"true", "message_ids"=>["2"], "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;35;1mTerm Load (0.3ms)[0m   [0mSELECT * FROM "terms" [0m
+  [4;36;1mTerm Create (0.3ms)[0m   [0;1mINSERT INTO "terms" ("created_at", "updated_at", "str") VALUES('2010-07-08 17:45:34', '2010-07-08 17:45:34', 'hiya')[0m
+Rendered messages/_result (3.3ms)
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/messages/match_terms?all_terms=true&message_ids%5B%5D=2]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:45:41) [POST]
+  Parameters: {"message_ids"=>["2"], "commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>"asd"}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 2) [0m
+Rendered messages/_result (0.1ms)
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/match_terms?message_ids%5B%5D=2]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 13:45:54) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2851ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 13:45:57) [GET]
+  [4;36;1mTerm Load (0.7ms)[0m   [0;1mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:46:07) [POST]
+  Parameters: {"all_terms"=>"true", "commit"=>"Search Against all terms", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs="}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:72:in `match_terms'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:46:08) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:72:in `match_terms'
+
+Rendered rescues/_trace (116.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#match_terms (for 127.0.0.1 at 2010-07-08 13:46:09) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:72:in `match_terms'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 13:46:16) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/accounts]

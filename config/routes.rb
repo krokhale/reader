@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :terms
+
+  map.resources :terms
+
   map.resources :mails
 
   map.resources :accounts

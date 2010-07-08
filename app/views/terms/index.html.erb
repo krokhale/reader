@@ -1,0 +1,20 @@
+<h1>Listing terms</h1>
+
+<table>
+  <tr>
+    <th>Str</th>
+  </tr>
+
+<% @terms.each do |term| %>
+  <tr>
+    <td><%=h term.str %></td>
+    <td><%= link_to 'Show', term %></td>
+    <td><%= link_to 'Edit', edit_term_path(term) %></td>
+    <td><%= link_to 'Destroy', term, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New term', new_term_path %>

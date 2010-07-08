@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  str: MyString
+  message_id: 1
+
+two:
+  str: MyString
+  message_id: 1

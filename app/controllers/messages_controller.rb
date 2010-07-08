@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
      @account = Account.find(params[:username][:id])
      username = @account.username
      password = @account.password
-     search_terms = params[:search_terms].split(",")
+     #search_terms = params[:search_terms].split(",")
      mail_ids = params[:mail_from].split(",")
 
      Mail.defaults do
@@ -33,7 +33,7 @@ class MessagesController < ApplicationController
       message_ids = []
             
       emails.each do |email|  
-          message_id = match(email,search_terms,mail_ids)
+          message_id = match_id(email,mail_ids)
           #only stores ids that are not nil
         if message_id != nil
           message_ids << message_id
@@ -44,24 +44,12 @@ class MessagesController < ApplicationController
     end
     
     
-    def match(email,search_terms,mail_ids)
+    def match_id(email,mail_ids)
       
-      tokens = []
-    
-       email.subject.split(/[^-a-zA-Z]/).each do |word|
-         tokens << word
-       end
-       
-       email.body.decoded.split(/[^-a-zA-Z]/).each do |word|
-          tokens << word
-        end
-        
-       matched_terms = tokens & search_terms
        matched_ids = email.from & mail_ids
        
-       if (matched_terms.count != 0 && matched_ids.count != 0)
-       message = Message.create(:mail_from => email.from.to_s, :subject => email.subject, :body => email.body.decoded,
-        :matched => matched_terms.join(","))     
+       if (matched_ids.count != 0)
+       message = Message.create(:mail_from => email.from.to_s, :subject => email.subject, :body => email.body.decoded)     
        end
        
        # returns nil if there is no message created else returns the message id.
@@ -74,6 +62,45 @@ class MessagesController < ApplicationController
      end
         
         
+      
+      def match_terms()
+        
+        
+         tokens =  []
+         
+         
+         params[:message_ids].each do |id|
+         
+           
+           Message.find(id).subject.split(/[^-a-zA-Z]/).each do |word|
+             tokens << word
+           end
+
+           Message.find(id).body.split(/[^-a-zA-Z]/).each do |word|
+              tokens << word
+            end
+            
+          end
+          
+          if params[:all_terms]
+            search_terms = Term.all.collect(&:str)
+          else
+            search_terms = params[:search_terms].split(",")
+          end
+
+           @matched_terms = tokens & search_terms
+           
+           
+           
+            respond_to do |format|
+             format.html{ render :update do |page|
+                 page.replace_html "updated", :partial => "result", :locals => { :terms => @matched_terms }
+                 page.visual_effect :highlight, 'updated' 
+             	end
+                  }
+              end
+           
+         end
          
       
   
@@ -90,6 +117,8 @@ class MessagesController < ApplicationController
         @messages << Message.find(id)
       end
     end
+    
+    @terms = Term.all
       
     respond_to do |format|
       format.html # show.html.erb

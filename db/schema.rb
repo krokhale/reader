@@ -9,11 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100708043724) do
+ActiveRecord::Schema.define(:version => 20100708154417) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
     t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "crons", :force => true do |t|
+    t.string   "mail_ids"
+    t.string   "terms"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,6 +32,12 @@ ActiveRecord::Schema.define(:version => 20100708043724) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "matched"
+  end
+
+  create_table "terms", :force => true do |t|
+    t.string   "str"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

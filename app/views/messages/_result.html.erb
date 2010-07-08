@@ -1,0 +1,14 @@
+
+<p>
+	<% if terms.count == 0 %>
+		No terms Matched.
+		<%else%>
+		
+			Following Terms Matched:
+			<% terms.each do |term|%> <br />
+				<%= term.to_s %> <br />
+				<% Term.create(:str => term)%>
+				<%end%>	
+			<% end%>
+			
+</p>
