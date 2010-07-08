@@ -83,13 +83,31 @@ class MessagesController < ApplicationController
   # GET /mails/1
   # GET /mails/1.xml
   def show
-    @mail = Mail.find(params[:id])
-
+    
+    @messages = []
+    if params[:message_ids]
+      params[:message_ids].each do |id|
+        @messages << Message.find(id)
+      end
+      else
+        flash[:notice] = "No New Mails found with the required criteria!"    
+    end
+      
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @mail }
+      format.xml  { render :xml => @message }
     end
   end
+  
+  
+  
+  def search
+    
+    @accounts = Account.all
+    
+  end
+  
+  
 
   # GET /mails/new
   # GET /mails/new.xml

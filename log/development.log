@@ -2040,3 +2040,624 @@ Rendering template within layouts/messages
 Rendering messages/show
 Completed in 2058ms (View: 59, DB: 0) | 200 OK [http://localhost/messages/show?message_ids%5B%5D=5&message_ids%5B%5D=6]
   [4;36;1mMessage Load (0.7ms)[0m   [0;1mSELECT * FROM "messages" [0m
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 03:21:53) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1796ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:21:55) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:88:in `show'
+
+Rendered rescues/_trace (54.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 03:37:35) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mMessage Create (34.3ms)[0m   [0mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('krishna.rokhale@gmail.com', '2010-07-08 07:37:37', 'woah', '2010-07-08 07:37:37', 'hiya', 'hiya,woah')[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=7
+Completed in 2475ms (DB: 34) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:37:37) [GET]
+  Parameters: {"message_ids"=>["7"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 7) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+
+ActionView::TemplateError (undefined method `message_path' for #<ActionView::Base:0x1041ec440>) on line #18 of app/views/messages/show.html.erb:
+15:     <td><%=h message.body %></td>
+16:     <td><%=h message.mail_from %></td>
+17: 
+18:     <td><%= link_to 'Show', message %></td>
+19:     <td><%= link_to 'Edit', edit_message_path(message) %></td>
+20:     <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
+21:   </tr>
+
+    app/views/messages/show.html.erb:18
+    app/views/messages/show.html.erb:12:in `each'
+    app/views/messages/show.html.erb:12
+    app/controllers/messages_controller.rb:92:in `show'
+
+Rendered rescues/_trace (133.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 03:38:34) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mMessage Create (0.5ms)[0m   [0;1mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('krishna.rokhale@gmail.com', '2010-07-08 07:38:36', 'woah', '2010-07-08 07:38:36', 'hiya', 'hiya,woah')[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=8
+Completed in 2348ms (DB: 1) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:38:36) [GET]
+  Parameters: {"message_ids"=>["8"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 8) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+
+ActionView::TemplateError (undefined method `message_path' for #<ActionView::Base:0x1043e2d08>) on line #18 of app/views/messages/show.html.erb:
+15:     <td><%=h message.body %></td>
+16:     <td><%=h message.mail_from %></td>
+17: 
+18:     <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
+19:   </tr>
+20: <% end %>
+21: </table>
+
+    app/views/messages/show.html.erb:18
+    app/views/messages/show.html.erb:12:in `each'
+    app/views/messages/show.html.erb:12
+    app/controllers/messages_controller.rb:92:in `show'
+
+Rendered rescues/_trace (48.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 03:40:19) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('krishna.rokhale@gmail.com', '2010-07-08 07:40:22', 'woah', '2010-07-08 07:40:22', 'hiya', 'hiya,woah')[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=9
+Completed in 2615ms (DB: 1) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:40:22) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids%5B%5D=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:41:51) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 93ms (View: 87, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:42:27) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:43:11) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:43:44) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:44:14) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:45:16) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:45:42) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 91ms (View: 83, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:45:56) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:46:06) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:46:17) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:46:26) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:48:42) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:49:28) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:50:33) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:51:00) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:54:49) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:54:50) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:55:47) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:55:48) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:56:02) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 86ms (View: 80, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:57:03) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:57:20) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:58:04) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:58:43) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:58:45) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:59:01) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 03:59:18) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:00:06) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:00:24) [GET]
+  Parameters: {"message_ids"=>["9"]}
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 9) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/messages/show?message_ids[]=9]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:03:47) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mMessage Create (0.4ms)[0m   [0mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('krishna.rokhale@gmail.com', '2010-07-08 08:03:51', 'woah', '2010-07-08 08:03:51', 'hiya', 'hiya,woah')[0m
+  [4;36;1mMessage Create (0.3ms)[0m   [0;1mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('sunithi1212@gmail.com', '2010-07-08 08:03:51', 'woah', '2010-07-08 08:03:51', 'hiya', 'hiya,woah')[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=10&message_ids%5B%5D=11
+Completed in 3702ms (DB: 1) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:03:51) [GET]
+  Parameters: {"message_ids"=>["10", "11"]}
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages"."id" = 10) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 11) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/messages/show?message_ids%5B%5D=10&message_ids%5B%5D=11]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:04:16) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2133ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:04:19) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:88:in `show'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:05:51) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2148ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:05:54) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:88:in `show'
+
+Rendered rescues/_trace (32.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:06:16) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1860ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:06:18) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:88:in `show'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:06:43) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1989ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:06:45) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:88:in `show'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:07:10) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1975ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:07:12) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/messages_controller.rb:88:in `show'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:08:01) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2428ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:08:04) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:08:58) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com,sunithi1212@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"hiya,woah"}
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2080ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:09:00) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:10:16) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+
+ActionView::TemplateError (undefined local variable or method `new_email_path' for #<ActionView::Base:0x104164630>) on line #26 of app/views/messages/show.html.erb:
+23: </table>
+24: 
+25: <br />
+26: <%= link_to 'Search', new_email_path %>
+
+    app/views/messages/show.html.erb:26
+    app/controllers/messages_controller.rb:96:in `show'
+
+Rendered rescues/_trace (124.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 04:11:46) [GET]
+  [4;36;1mMessage Load (1.2ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 14ms (View: 4, DB: 2) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 04:11:52) [GET]
+  [4;36;1mMessage Load (2.0ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 14ms (View: 5, DB: 2) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 04:11:54) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1505ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 04:11:56) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:12:15) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:12:18) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:12:23) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:12:40) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 04:13:16) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 04:14:01) [GET]
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:14:02) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 04:14:11) [GET]
+  [4;35;1mMessage Load (1.1ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 26ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 04:14:23) [GET]
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 413ms (View: 17, DB: 1) | 200 OK [http://localhost/accounts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 04:14:38) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:14:41) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:14:47) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:16:55) [GET]
+Rendering template within layouts/messages
+Rendering messages/search
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map) on line #17 of app/views/messages/search.html.erb:
+14:   </p>
+15: 
+16: <p>Account <br />
+17: <%= select("username","id", @accounts.map {|u| [u.username,u.id]}) %>
+18: </p>
+19:   <%= submit_tag("Search") %>
+20: <% end %>
+
+    app/views/messages/search.html.erb:17
+    app/views/messages/search.html.erb:6
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 04:17:29) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/messages/search]

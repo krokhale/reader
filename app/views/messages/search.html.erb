@@ -1,0 +1,21 @@
+
+
+<h1>Mail Reader::Mails::Search</h1>
+
+
+<% form_tag(:controller => "messages", :action => :search_mail) do %>
+
+<p>Mail From <br />
+  <%= text_area_tag(:mail_from) %>
+</p>
+
+<p> Search Terms <br />
+	<%= text_area_tag(:search_terms) %>
+  </p>
+
+<p>Account <br />
+<%= select("username","id", @accounts.map {|u| [u.username,u.id]}) %>
+</p>
+  <%= submit_tag("Search") %>
+<% end %>
+
