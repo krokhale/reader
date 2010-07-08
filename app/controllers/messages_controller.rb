@@ -107,6 +107,48 @@ class MessagesController < ApplicationController
     
   end
   
+  def search_mail
+     
+     search_terms = params[:search_terms].split(",")
+      mail_ids = params[:mail_from].split(",")
+
+      messages_from_ids = messages_from_terms = []
+
+      mail_ids.each do |id|
+        messages_from_ids << Message.find_all_by_mail_from(id)
+        messages_from_ids.flatten!
+      end
+
+      search_terms.each do |term|
+        Message.all.each do |message|
+          if ((message.matched.split(",") & search_terms).count != 0)
+            messages_from_terms << message
+          end
+        end
+      end
+      
+      
+      if ((search_terms.count && mail_ids.count) != 0)
+      common_results = messages_from_ids & messages_from_terms
+      message_ids = common_results.collect(&:id)
+    elsif(search_terms.count == 0)
+      message_ids = messages_from_ids.collect(&:id)
+    elsif(mail_ids.count == 0)
+      message_ids = messages_from_terms.collect(&:id)
+    end
+
+      redirect_to :controller => "messages", :action => :show, :message_ids => message_ids
+    end
+    
+    
+    def cron
+      require 'rubygems'
+      require 'rufus/scheduler'
+      
+      
+      
+    end
+  
   
 
   # GET /mails/new
