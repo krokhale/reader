@@ -33,7 +33,7 @@ class MessagesController < ApplicationController
       message_ids = []
             
       emails.each do |email|  
-          message_id = match(email,search_terms)
+          message_id = match(email,search_terms,mail_ids)
           #only stores ids that are not nil
         if message_id != nil
           message_ids << message_id
@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
     end
     
     
-    def match(email,search_terms)
+    def match(email,search_terms,mail_ids)
       
       tokens = []
     
@@ -57,9 +57,10 @@ class MessagesController < ApplicationController
         end
         
        matched_terms = tokens & search_terms
+       matched_ids = email.from & mail_ids
        
-       if matched_terms.count != 0
-       message = Message.create(:mail_from => email.from, :subject => email.subject, :body => email.body.decoded,
+       if (matched_terms.count != 0 && matched_ids.count != 0)
+       message = Message.create(:mail_from => email.from.to_s, :subject => email.subject, :body => email.body.decoded,
         :matched => matched_terms.join(","))     
        end
        
