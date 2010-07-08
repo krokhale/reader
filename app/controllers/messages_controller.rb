@@ -89,8 +89,6 @@ class MessagesController < ApplicationController
       params[:message_ids].each do |id|
         @messages << Message.find(id)
       end
-      else
-        flash[:notice] = "No New Mails found with the required criteria!"    
     end
       
     respond_to do |format|
@@ -141,14 +139,6 @@ class MessagesController < ApplicationController
     end
     
     
-    def cron
-      require 'rubygems'
-      require 'rufus/scheduler'
-      
-      
-      
-    end
-  
   
 
   # GET /mails/new

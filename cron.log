@@ -1,0 +1,70 @@
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3
+/Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48: undefined method `cron_task' for #<Class:0x1017f0560> (NoMethodError)
+	from (eval):1
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `eval'
+	from /Users/krokhale/.gem/ruby/1.8/gems/rails-2.3.8/lib/commands/runner.rb:48
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+	from script/runner:3

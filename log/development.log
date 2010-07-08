@@ -3186,3 +3186,378 @@ Processing MessagesController#cron (for 127.0.0.1 at 2010-07-08 05:07:25) [GET]
 Rendering template within layouts/messages
 Rendering messages/cron
 Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/cron]
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAccounts (20100707123618)
+Migrating to CreateMails (20100707131852)
+Migrating to AddMatched (20100708043724)
+Migrating to AddCron (20100708092745)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "crons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_ids" varchar(255), "terms" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100708092745')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("crons")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing MessagesController#activate_cron (for 127.0.0.1 at 2010-07-08 05:59:10) [GET]
+
+MissingSourceFile (no such file to load -- rufus-scheduler):
+  app/controllers/messages_controller.rb:155:in `activate_cron'
+
+Rendered rescues/_trace (37.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#activate_cron (for 127.0.0.1 at 2010-07-08 05:59:30) [GET]
+
+NoMethodError (undefined method `start_new' for Rufus::Scheduler:Module):
+  app/controllers/messages_controller.rb:157:in `activate_cron'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#activate_cron (for 127.0.0.1 at 2010-07-08 06:01:08) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddCron (20100708092745)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (36.5ms)[0m   [0mDROP TABLE "crons"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100708092745'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("messages")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 06:40:56) [GET]
+Rendering home/index
+Completed in 68ms (View: 8, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#cron (for 127.0.0.1 at 2010-07-08 06:40:58) [GET]
+Rendering template within layouts/messages
+Rendering messages/cron
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/messages/cron]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 06:41:02) [GET]
+  [4;36;1mMessage Load (1.2ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 06:41:10) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/messages/search]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 06:41:14) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/accounts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDROP TABLE "messages"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mail_from" varchar(255), "subject" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime, "matched" varchar(255)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 06:41:36) [GET]
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 06:41:38) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 77ms (View: 3, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:42:15) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "search_terms"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/messages_controller.rb:18:in `get_mail'
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 06:42:29) [GET]
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing AccountsController#new (for 127.0.0.1 at 2010-07-08 06:42:30) [GET]
+Rendering template within layouts/accounts
+Rendering accounts/new
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/accounts/new]
+
+
+Processing AccountsController#create (for 127.0.0.1 at 2010-07-08 06:42:41) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "account"=>{"username"=>"temp.nav.chat", "password"=>"tempnavchat"}}
+  [4;35;1mAccount Create (0.4ms)[0m   [0mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-08 10:42:41', '2010-07-08 10:42:41', 'temp.nav.chat', 'tempnavchat')[0m
+Redirected to http://localhost:3000/accounts/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/accounts]
+
+
+Processing AccountsController#show (for 127.0.0.1 at 2010-07-08 06:42:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendering template within layouts/accounts
+Rendering accounts/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/accounts/1]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 06:42:42) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 06:42:50) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-07-08 06:42:52) [GET]
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/messages]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:43:06) [POST]
+  Parameters: {"mail_from"=>"", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>""}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 3807ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:43:09) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:43:22) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"woah"}
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1855ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:43:24) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:44:09) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 3477ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:44:13) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 06:44:16) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/messages/search]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:44:19) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"woah"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1775ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:44:21) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:44:24) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"woah"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 1990ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:44:26) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:45:03) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"test"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mMessage Create (0.7ms)[0m   [0mINSERT INTO "messages" ("mail_from", "created_at", "body", "updated_at", "subject", "matched") VALUES('krishna.rokhale@gmail.com', '2010-07-08 10:45:06', '
+--Apple-Mail-1--369019865
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+	charset=us-ascii
+
+
+
+Begin forwarded message:
+
+> From: krishna rokhale <krishna.rokhale@gmail.com>
+> Date: July 8, 2010 6:43:55 AM EDT
+> To: temp.nav.chat@gmail.com
+> Subject: Testing
+> 
+> This is a test email.
+> 
+> 	
+
+
+--Apple-Mail-1--369019865
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=us-ascii
+
+<html><head></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; =
+"><br><div><br><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><blockquote type=3D"cite"><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:''Helvetica''; =
+font-size:medium; color:rgba(0, 0, 0, 1);"><b>From: </b></span><span =
+style=3D"font-family:''Helvetica''; font-size:medium;">krishna rokhale =
+&lt;<a =
+href=3D"mailto:krishna.rokhale@gmail.com">krishna.rokhale@gmail.com</a>&gt=
+;<br></span></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:''Helvetica''; font-size:medium; color:rgba(0, 0, 0, =
+1);"><b>Date: </b></span><span style=3D"font-family:''Helvetica''; =
+font-size:medium;">July 8, 2010 6:43:55 AM EDT<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family:''Helvetica''; =
+font-size:medium; color:rgba(0, 0, 0, 1);"><b>To: </b></span><span =
+style=3D"font-family:''Helvetica''; font-size:medium;"><a =
+href=3D"mailto:temp.nav.chat@gmail.com">temp.nav.chat@gmail.com</a><br></s=
+pan></div><div style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family:''Helvetica''; font-size:medium; color:rgba(0, 0, 0, =
+1);"><b>Subject: </b></span><span style=3D"font-family:''Helvetica''; =
+font-size:medium;"><b>Testing</b><br></span></div><br><div>This is a =
+test email.<br><br><span class=3D"Apple-tab-span" =
+style=3D"white-space:pre">	=
+</span><br></div></blockquote></div><br></body></html>=
+
+--Apple-Mail-1--369019865--', '2010-07-08 10:45:06', 'Fwd: Testing', 'test')[0m
+Redirected to http://localhost:3000/messages/show?message_ids%5B%5D=1
+Completed in 3140ms (DB: 1) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:45:06) [GET]
+  Parameters: {"message_ids"=>["1"]}
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages"."id" = 1) [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/messages/show?message_ids%5B%5D=1]
+
+
+Processing MessagesController#get_mail (for 127.0.0.1 at 2010-07-08 06:46:04) [POST]
+  Parameters: {"mail_from"=>"krishna.rokhale@gmail.com", "commit"=>"Get Mail", "authenticity_token"=>"KDQkJLD94/bOVlyNIxEcj2pDn/FeL5zoBULDopoSlWs=", "username"=>{"id"=>"1"}, "search_terms"=>"test"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Redirected to http://localhost:3000/messages/show?
+Completed in 2175ms (DB: 0) | 302 Found [http://localhost/messages/get_mail]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-08 06:46:06) [GET]
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?]
+
+
+Processing MessagesController#search (for 127.0.0.1 at 2010-07-08 06:46:11) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendering template within layouts/messages
+Rendering messages/search
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/messages/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-08 06:46:15) [GET]
+Rendering home/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing AccountsController#index (for 127.0.0.1 at 2010-07-08 06:46:18) [GET]
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendering template within layouts/accounts
+Rendering accounts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts]
