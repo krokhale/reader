@@ -90,6 +90,7 @@ def get_mail
          return message
     end
     
+    
     def form_not_found_message(account)
       
       message = []
@@ -106,7 +107,16 @@ def get_mail
      end
      
      def write_to_log(result_messages)
-     
-     
-     
+       
+       file_name = "mail_script_log"
+       
+       path = File.join(RAILS_ROOT, file_name)
+       file = File.open(path, "a")  { |f| f.write("Current Time : #{Time.now}") }
+       file = File.open(path, "a")  { |f| f.write("\n") }
+       result_messages.each do |message|
+       file = File.open(path, "a")  { |f| f.write(message) }
+       file = File.open(path, "a")  { |f| f.write("\n") }
+     end
+     file = File.open(path, "a")  { |f| f.write("\n\n\n\n\n\n") }
+   end
 end

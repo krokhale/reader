@@ -8554,3 +8554,180 @@ Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 12:53:44) [GET]
 Rendering template within layouts/messages
 Rendering messages/show
 Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing ApplicationController#eval (for 127.0.0.1 at 2010-07-09 13:01:09) [GET]
+
+SyntaxError (/Users/krokhale/code/reader/lib/script.rb:120: syntax error, unexpected $end, expecting kEND):
+  app/controllers/messages_controller.rb:4
+
+Rendered rescues/_trace (37.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:01:22) [GET]
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" [0m
+
+NameError (undefined local variable or method `file_name' for #<MessagesController:0x1031d3ce8>):
+  lib/script.rb:113:in `write_to_log'
+  lib/script.rb:50:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:01:44) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2396ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:01:47) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:02:50) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2644ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:02:53) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:04:12) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 3034ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:04:16) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:05:32) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2844ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:05:35) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:08:15) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 3482ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:08:18) [GET]
+  Parameters: {"result"=>["Summary::Account: krisssroks", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "Summary::Account: temp.nav.chat", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:08:36) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2922ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:08:39) [GET]
+  Parameters: {"result"=>["Summary::Account: krisssroks", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "Summary::Account: temp.nav.chat", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/messages/show?result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:09:30) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2796ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:09:33) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:09:44) [GET]
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2672ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:09:47) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:11:17) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2714ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:11:20) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:12:22) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2774ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:12:25) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-09 13:12:41) [GET]
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Redirected to http://localhost:3000/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH
+Completed in 2601ms (DB: 1) | 302 Found [http://localhost/messages/eval]
+
+
+Processing MessagesController#show (for 127.0.0.1 at 2010-07-09 13:12:44) [GET]
+  Parameters: {"result"=>["-------------------------------------------------------------------", "Summary::Account: krisssroks", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH", "-------------------------------------------------------------------", "Summary::Account: temp.nav.chat", "-------------------------------------------------------------------", "Total Emails = 0", "Emails matching the search criteria = 0", "The following terms matched:", "NO MATCH"]}
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" [0m
+Rendering template within layouts/messages
+Rendering messages/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/show?result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+krisssroks&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Summary%3A%3AAccount%3A+temp.nav.chat&result%5B%5D=-------------------------------------------------------------------&result%5B%5D=Total+Emails+%3D+0&result%5B%5D=Emails+matching+the+search+criteria+%3D+0&result%5B%5D=The+following+terms+matched%3A&result%5B%5D=NO+MATCH]
