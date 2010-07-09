@@ -9,7 +9,7 @@ Net::SMTP.class_eval do
 
     sock = timeout(@open_timeout) { TCPSocket.open(@address, @port) }
     @socket = Net::InternetMessageIO.new(sock)
-    @socket.read_timeout = 60 #@read_timeout
+    @socket.read_timeout = 600 #@read_timeout
 
     check_response(critical { recv_response() })
     do_helo(helodomain)
@@ -20,7 +20,7 @@ Net::SMTP.class_eval do
       ssl.sync_close = true
       ssl.connect
       @socket = Net::InternetMessageIO.new(ssl)
-      @socket.read_timeout = 60 #@read_timeout
+      @socket.read_timeout = 600 #@read_timeout
       do_helo(helodomain)
     end
 

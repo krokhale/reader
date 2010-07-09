@@ -13,6 +13,10 @@
     <td><%= link_to 'Show', account %></td>
     <td><%= link_to 'Edit', edit_account_path(account) %></td>
     <td><%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Add Search Terms', :controller => "terms", :action => "new", :account_id => account.id %></td>
+    <td><%= link_to 'Remove Search Terms', :controller => "terms", :action => "new", :account_id => account.id %></td>
+
+    
   </tr>
 <% end %>
 </table>

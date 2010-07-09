@@ -403,8 +403,8 @@ module Net
       @command = nil
       @socket = nil
       @started = false
-      @open_timeout = 30
-      @read_timeout = 60
+      @open_timeout = 300
+      @read_timeout = 600
       @debug_output = nil
 
       @mails = nil

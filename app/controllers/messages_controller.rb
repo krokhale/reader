@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+  
+  
+  include Script
+  
   # GET /mails
   # GET /mails.xml
   def index
@@ -11,101 +15,13 @@ class MessagesController < ApplicationController
     end
   end
   
-  def get_mail
-     require 'mail'
-     require 'pop_ssl.rb'
-     
-     @account = Account.find(params[:username][:id])
-     username = @account.username
-     password = @account.password
-     #search_terms = params[:search_terms].split(",")
-     mail_ids = params[:mail_from].split(",")
-
-     Mail.defaults do
-        retriever_method :pop3, { :address             => "pop.gmail.com",
-                                  :port                => 995,
-                                  :user_name           => username,
-                                  :password            => password,
-                                  :enable_ssl          => true }
-      end
-
-      emails = Mail.all
-      message_ids = []
-            
-      emails.each do |email|  
-          message_id = match_id(email,mail_ids)
-          #only stores ids that are not nil
-        if message_id != nil
-          message_ids << message_id
-        end
-      end
-      
-      redirect_to :controller => "messages", :action => :show, :message_ids => message_ids
-    end
+  
+  def eval
     
+    result_messages = get_mail()
     
-    def match_id(email,mail_ids)
-      
-       matched_ids = email.from & mail_ids
-       
-       if (matched_ids.count != 0)
-       message = Message.create(:mail_from => email.from.to_s, :subject => email.subject, :body => email.body.decoded)     
-       end
-       
-       # returns nil if there is no message created else returns the message id.
-       if message == nil
-       return nil
-     else
-       return message.id
-     end
-     
-     end
-        
-        
-      
-      def match_terms()
-        
-        
-         tokens =  []
-         
-         
-         params[:message_ids].each do |id|
-         
-           
-           Message.find(id).subject.split(/[^-a-zA-Z]/).each do |word|
-             tokens << word
-           end
-
-           Message.find(id).body.split(/[^-a-zA-Z]/).each do |word|
-              tokens << word
-            end
-            
-          end
-          
-          if params[:all_terms]
-            search_terms = Term.all.collect(&:str)
-          else
-            search_terms = params[:search_terms].split(",")
-          end
-
-           @matched_terms = tokens & search_terms
-           
-           
-           
-            respond_to do |format|
-             format.html{ render :update do |page|
-                 page.replace_html "updated", :partial => "result", :locals => { :terms => @matched_terms }
-                 page.visual_effect :highlight, 'updated' 
-             	end
-                  }
-              end
-           
-         end
-         
-      
-  
-  
-  
+     redirect_to :controller => "messages", :action => :show, :result => result_messages
+  end
 
   # GET /mails/1
   # GET /mails/1.xml
@@ -127,46 +43,6 @@ class MessagesController < ApplicationController
   end
   
   
-  
-  def search
-    
-    @accounts = Account.all
-    
-  end
-  
-  def search_mail
-     
-     search_terms = params[:search_terms].split(",")
-      mail_ids = params[:mail_from].split(",")
-
-      messages_from_ids = messages_from_terms = []
-
-      mail_ids.each do |id|
-        messages_from_ids << Message.find_all_by_mail_from(id)
-        messages_from_ids.flatten!
-      end
-
-      search_terms.each do |term|
-        Message.all.each do |message|
-          if ((message.matched.split(",") & search_terms).count != 0)
-            messages_from_terms << message
-          end
-        end
-      end
-      
-      
-      if ((search_terms.count && mail_ids.count) != 0)
-      common_results = messages_from_ids & messages_from_terms
-      message_ids = common_results.collect(&:id)
-    elsif(search_terms.count == 0)
-      message_ids = messages_from_ids.collect(&:id)
-    elsif(mail_ids.count == 0)
-      message_ids = messages_from_terms.collect(&:id)
-    end
-
-      redirect_to :controller => "messages", :action => :show, :message_ids => message_ids
-    end
-    
     
   
 

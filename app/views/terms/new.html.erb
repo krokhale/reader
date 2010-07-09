@@ -7,6 +7,7 @@
     <%= f.label :str %><br />
     <%= f.text_field :str %>
   </p>
+    <%= f.hidden_field :account_id, :value => params[:account_id] %>
   <p>
     <%= f.submit 'Create' %>
   </p>
