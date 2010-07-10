@@ -2,6 +2,18 @@
 <h1>Mail Reader::Home</h1>
 
 
+    <%=h link_to_remote  "Check Mails", :url => { :controller => "messages", :action => :eval} %>  
+	<%=h link_to_remote  "Add Account and Terms", :url => { :controller => "accounts", :action => :ajaxify_index } %>  
+	
 
-    <p><%= link_to 'Check Mails', :controller => "messages", :action => :eval %> </p>
-    <p><%= link_to 'Add Account and Terms', :controller => "accounts" %></p>
+	<br />
+	<br />
+	<div id="message"> </div>
+	<br />
+	<br />
+	<br />
+
+
+    <div id="update"> </div>
+
+

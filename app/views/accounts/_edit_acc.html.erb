@@ -1,0 +1,13 @@
+
+ 
+
+
+
+<% form_remote_tag(:url => {:action => :ajaxify_edit, :edit => true }) do %>
+
+    <%= text_field_tag :username, account.username %>
+    <%= text_field_tag :password, account.password %>
+
+    <%= submit_tag "Update" %>
+
+<%end %>

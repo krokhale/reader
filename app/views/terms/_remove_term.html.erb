@@ -1,0 +1,19 @@
+
+
+
+
+<h3>Remove Terms </h3>
+
+
+
+<% terms.each do |term| %>
+	<%= term.str %>  <%=h link_to_remote  "Delete", :url => { :action => "ajaxify_remove", :remove => true, :method => 'delete', :term_id => term.id }, 
+             :confirm => 'Are you sure you want to delete this Term?'  %> <br />
+	<%end%> 
+	
+	<br />
+	<br />
+	<br />
+	
+	<%=h link_to_remote  "Back", :url => { :controller => "accounts", :action => :ajaxify_index} %>  
+	

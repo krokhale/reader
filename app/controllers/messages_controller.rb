@@ -18,9 +18,17 @@ class MessagesController < ApplicationController
   
   def eval
     
-    result_messages = get_mail()
+    @result_messages = get_mail()
     
-     redirect_to :controller => "messages", :action => :show, :result => result_messages
+    
+     respond_to do |format|
+       format.html{ render :update do |page|
+           page.replace_html "update", :partial => "show_results", :locals => {:results => @result_messages}
+           page.visual_effect :highlight, "update"
+       	end
+            }
+        end
+    
   end
 
   # GET /mails/1

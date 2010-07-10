@@ -9,6 +9,74 @@ class TermsController < ApplicationController
       format.xml  { render :xml => @terms }
     end
   end
+  
+  
+  def ajaxify_new
+    
+     if params[:new]
+       params[:str].split(",").each do |str|
+       @term = Term.create(:str => str, :account_id => params[:account_id])
+     end
+     end
+     
+     @accounts = Account.all
+     @account = Account.find(params[:account_id])
+     @message = "Terms added."
+       
+     
+     respond_to do |format|
+        format.html{ render :update do |page|
+          page.replace_html "update", :partial => "new_term"
+          if params[:new]
+          page.replace_html "update", :partial => "accounts/index_acc", :locals => {:accounts => @accounts}
+          page.replace_html "message", :partial => "accounts/message_acc", :locals => {:message => @message}
+          
+          page.visual_effect :highlight, "message"
+          page.visual_effect :highlight, "update"
+        end
+          
+          
+        	end
+             }
+         end
+    
+    
+  end
+  
+  
+  
+  def ajaxify_remove
+    
+    
+    @terms = Term.find_all_by_account_id(params[:account_id])
+    
+    if(params[:remove])
+      Term.destroy(params[:term_id])
+      @message = "Term Deleted."
+      @terms_after = Term.all
+    end
+    
+    
+    
+    respond_to do |format|
+        format.html{ render :update do |page|
+          if params[:remove]
+          page.replace_html "update", :partial => "remove_term", :locals => {:terms => @terms_after}          
+          page.replace_html "message", :partial => "accounts/message_acc", :locals => {:message => @message}
+          
+          page.visual_effect :highlight, "message"
+        else
+          page.replace_html "update", :partial => "remove_term", :locals => {:terms => @terms}
+        end
+          
+          
+        	end
+             }
+         end
+         
+    
+  end
+  
 
   # GET /terms/1
   # GET /terms/1.xml

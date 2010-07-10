@@ -1,0 +1,17 @@
+
+
+
+<h3>Mail Reader Accounts</h3>
+
+
+
+<% accounts.each do |account| %>
+ 
+<%="<p id=acc#{account.id}>"%><%=h link_to_remote account.username, :url => { :controller => "accounts", :action => :ajaxify, :id => account.id} %></p>
+   
+
+<% end %>
+
+<br />
+
+<%=h link_to_remote  "New Account", :url => { :controller => "accounts", :action => :ajaxify_new} %>  

@@ -18,22 +18,6 @@ ActiveRecord::Schema.define(:version => 20100709031240) do
     t.datetime "updated_at"
   end
 
-  create_table "crons", :force => true do |t|
-    t.string   "mail_ids"
-    t.string   "terms"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "messages", :force => true do |t|
-    t.string   "mail_from"
-    t.string   "subject"
-    t.string   "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "matched"
-  end
-
   create_table "terms", :force => true do |t|
     t.string   "str"
     t.datetime "created_at"

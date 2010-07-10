@@ -1,0 +1,16 @@
+
+
+
+
+<h1>New account</h1>
+
+ <% form_remote_tag(:url => {:action => :ajaxify_new, :new => true }) do %>
+
+    Username:<%= text_field_tag :username %>
+    Password:<%= text_field_tag :password %>
+
+    <%= submit_tag "Create" %>
+
+<%end %>
+
+<%=h link_to_remote  "Back", :url => { :controller => "accounts", :action => :ajaxify_index} %>  

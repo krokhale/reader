@@ -1,0 +1,24 @@
+
+
+
+
+
+
+<h3>Add Terms to <%= @account.username %></h3>
+
+(Use CSV)
+<% form_remote_tag(:url => {:action => :ajaxify_new, :new => true }) do %>
+
+    <%= text_area_tag :str %>
+    <%= hidden_field_tag :account_id, @account.id %>
+    
+
+    <%= submit_tag "Create" %>
+
+<%end %>
+
+
+<br />
+<br />
+
+<%=h link_to_remote  "Back", :url => { :controller => "accounts", :action => :ajaxify_index} %>  
