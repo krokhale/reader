@@ -11,3 +11,7 @@
     <%= submit_tag "Update" %>
 
 <%end %>
+
+<br>
+
+<%=h link_to_remote  "Back", :url => { :controller => "accounts", :action => :ajaxify_index} %>  

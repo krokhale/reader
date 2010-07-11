@@ -24,19 +24,23 @@ def get_mail
     end
 
     emails = Mail.all
-    result_emails = []
     matched_terms = []
+    result_emails = []
+    result_email = []
        
     if (emails.count != 0)      
     emails.each do |email|
-         result = match(email,account)
-         result_emails << result[0]
-         matched_terms << result[1]
+         @result = match(email,account)
+         
+         if @result[0] == nil
+           @result[0] = []
+         end
+             
     end
     
-    result_emails.compact!    
+     #result_emails.compact!    
     
-    result_messages << form_result_message(result_emails, emails, account, matched_terms.to_s)
+    result_messages << form_result_message(@result[0], emails, account, @result[1].to_s)
     result_messages.flatten!
     
   else
@@ -57,6 +61,8 @@ def get_mail
   def match(email,account)
     
      tokens =  []
+     result_email = []
+     result_emails = []
     
      search_terms = Account.find(account).terms.collect(&:str)
      
@@ -67,7 +73,11 @@ def get_mail
        matched_terms = search_terms & tokens
      
      if (matched_terms.count != 0)
-       return email,matched_terms.join(",")
+        result_email << email.from.to_s
+        result_email << email.body.decoded
+        result_email << email.subject
+        result_emails << result_email   
+       return result_emails,matched_terms.join(",")
      else
        return nil,matched_terms.join(",")
      end
@@ -78,6 +88,7 @@ def get_mail
    def form_result_message(result_emails, emails,account,matched_terms)
 
      message = []
+     count = 1
        
      message << "-------------------------------------------------------------------"
      message << "Summary::Account: #{account.username}"   
@@ -86,6 +97,18 @@ def get_mail
      message << "Emails matching the search criteria = #{result_emails.count}"
      message << "The following terms matched:"
      message << "#{matched_terms}"
+    
+     message << "<br />"
+     
+     result_emails.each do |mail|
+       
+     message << "EMAIL::#{count}"
+     message << "---------------"
+     message << "MAIL FROM: #{mail[0]}"
+     message << "SUBJECT: #{mail[2]}"
+     message << "BODY: #{mail[1]}"
+     count = count + 1
+    end  
 
          return message
     end

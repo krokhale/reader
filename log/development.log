@@ -12095,3 +12095,1408 @@ Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:39:1
   [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
 Rendered accounts/_index_acc (3.6ms)
 Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:40:19) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDROP TABLE "terms"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "terms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "str" varchar(255), "created_at" datetime, "updated_at" datetime, "account_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:40:35) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:40:36) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.2ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 13:40:38) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_new_acc (2.9ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_new]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 13:40:47) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "username"=>"temp.nav.chat", "password"=>"tempnavchat"}
+  [4;35;1mAccount Create (0.4ms)[0m   [0mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-10 17:40:47', '2010-07-10 17:40:47', 'temp.nav.chat', 'tempnavchat')[0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.9ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_new?new=true]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:40:51) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (4.9ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-10 13:40:58) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_edit_acc (3.2ms)
+Completed in 84ms (View: 5, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_edit/1]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:41:23) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:41:24) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:41:25) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-10 13:41:27) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_edit_acc (4.4ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:41:46) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:41:48) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (78.4ms)
+Completed in 86ms (View: 80, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 13:41:50) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_new_acc (3.0ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_new]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 13:41:54) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "username"=>"n kjnkj", "password"=>"kjnkj"}
+  [4;35;1mAccount Create (0.3ms)[0m   [0mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-10 17:41:54', '2010-07-10 17:41:54', 'n kjnkj', 'kjnkj')[0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (2.6ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_new?new=true]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:41:56) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-10 13:41:58) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_edit_acc (3.7ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/1]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:42:20) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"2"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/2]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-10 13:42:28) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"2"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_edit_acc (4.4ms)
+Completed in 90ms (View: 84, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/2]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:42:30) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (4.3ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:42:32) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 13:42:34) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (3.7ms)
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:42:37) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (4.0ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:42:39) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_remove (for 127.0.0.1 at 2010-07-10 13:42:42) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mTerm Load (0.1ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms"."account_id" = '1') [0m
+Rendered terms/_remove_term (1.2ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/terms/ajaxify_remove?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:42:43) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (4.3ms)
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:42:45) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"2"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/2]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:42:52) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (4.2ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:42:58) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+
+Net::POPAuthenticationError (-ERR [AUTH] Username and password not accepted.):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/pop.rb:983:in `check_response_auth'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/pop.rb:885:in `auth'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/pop.rb:555:in `do_start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/pop.rb:528:in `start'
+  mail (2.2.5) lib/mail/network/retriever_methods/pop3.rb:148:in `start'
+  mail (2.2.5) lib/mail/network/retriever_methods/pop3.rb:96:in `find'
+  mail (2.2.5) lib/mail/network/retriever_methods/pop3.rb:82:in `all'
+  mail (2.2.5) lib/mail/mail.rb:165:in `all'
+  lib/script.rb:26:in `get_mail'
+  lib/script.rb:12:in `each'
+  lib/script.rb:12:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:43:04) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"2"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+Rendered accounts/_ajaxify_acc (5.2ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/2]
+
+
+Processing TermsController#ajaxify_remove (for 127.0.0.1 at 2010-07-10 13:43:06) [POST]
+  Parameters: {"account_id"=>"2", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mTerm Load (0.1ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms"."account_id" = '2') [0m
+Rendered terms/_remove_term (1.2ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/terms/ajaxify_remove?account_id=2]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:43:09) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (4.2ms)
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:43:10) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"2"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/2]
+
+
+Processing AccountsController#ajaxify_destroy (for 127.0.0.1 at 2010-07-10 13:43:13) [POST]
+  Parameters: {"method"=>"delete", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"2"}
+  [4;36;1mAccount Load (2.7ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 2) [0m
+  [4;35;1mAccount Destroy (0.4ms)[0m   [0mDELETE FROM "accounts" WHERE "id" = 2[0m
+  [4;36;1mAccount Load (1.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (2.6ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 20ms (View: 5, DB: 5) | 200 OK [http://localhost/accounts/ajaxify_destroy/2?method=delete]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:47:04) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+
+ActionView::MissingTemplate (Missing template messages/_message_acc.erb in view path app/views):
+  app/controllers/messages_controller.rb:26:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:47:33) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+
+ActionView::MissingTemplate (Missing template account/_message_acc.erb in view path app/views):
+  app/controllers/messages_controller.rb:26:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:47:36) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:47:38) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+
+ActionView::MissingTemplate (Missing template account/_message_acc.erb in view path app/views):
+  app/controllers/messages_controller.rb:26:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:47:51) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+Rendered accounts/_message_acc (0.1ms)
+
+NoMethodError (undefined method `get_mail' for #<ActionView::Base:0x1034ba808>):
+  app/controllers/messages_controller.rb:28:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendered rescues/_trace (119.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:47:53) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:47:55) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+Rendered accounts/_message_acc (0.1ms)
+
+NoMethodError (undefined method `get_mail' for #<ActionView::Base:0x1036c8168>):
+  app/controllers/messages_controller.rb:28:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendered rescues/_trace (42.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:49:05) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+Rendered accounts/_message_acc (0.1ms)
+
+NoMethodError (undefined method `get_mail' for Script:Module):
+  app/controllers/messages_controller.rb:28:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendered rescues/_trace (119.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:49:07) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:49:08) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+Rendered accounts/_message_acc (0.1ms)
+
+NoMethodError (undefined method `get_mail' for Script:Module):
+  app/controllers/messages_controller.rb:28:in `eval'
+  app/controllers/messages_controller.rb:25:in `eval'
+  app/controllers/messages_controller.rb:24:in `eval'
+
+Rendered rescues/_trace (123.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:49:42) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:49:44) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1493ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:49:50) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1191ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:50:06) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 13:50:34) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 13:50:37) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1931ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:50:41) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:50:44) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:50:46) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 13:50:49) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 13:50:52) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "terms"[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE TABLE "terms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "str" varchar(255), "created_at" datetime, "updated_at" datetime, "account_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 14:31:05) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 14:31:09) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 14:31:10) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 14:31:12) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.2ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 14:31:15) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 14:47:16) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 15:15:44) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (10.7ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 164ms (View: 2, DB: 11) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 15:16:55) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (11.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 31ms (View: 2, DB: 11) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 15:16:56) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.2ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 15:17:00) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_new_acc (2.9ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_new]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 15:17:13) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.2ms)
+Completed in 57ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 17:32:52) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.6ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:32:54) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.2ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 17:32:56) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (13.7ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_new_acc (310.4ms)
+Completed in 331ms (View: 312, DB: 14) | 200 OK [http://localhost/accounts/ajaxify_new]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 17:33:06) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "username"=>"temp.nav.chat", "password"=>"tempnavchat"}
+  [4;36;1mAccount Create (13.6ms)[0m   [0;1mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-10 21:33:06', '2010-07-10 21:33:06', 'temp.nav.chat', 'tempnavchat')[0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (2.0ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 29ms (View: 4, DB: 14) | 200 OK [http://localhost/accounts/ajaxify_new?new=true]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 17:33:12) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 2607ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:33:20) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 17:33:21) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.3ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:33:30) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 17:33:31) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.4ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 17:33:36) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (3.9ms)
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:33:40) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:33:55) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 17:33:56) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1394ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:34:00) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.8ms)
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 17:34:03) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:34:04) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 17:34:05) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:34:11) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 17:34:14) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1724ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 17:34:24) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-10 19:51:48) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 33ms (View: 30, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 19:51:58) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (12.1ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.8ms)
+Completed in 4622ms (View: 27, DB: 12) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-10 19:52:08) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (13.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 2203ms (View: 2, DB: 13) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 19:52:13) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (6.6ms)
+Completed in 62ms (View: 57, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 19:52:15) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (94.1ms)
+Completed in 106ms (View: 100, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 19:52:17) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 19:52:18) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.5ms)
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-10 19:52:19) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_edit_acc (4.5ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-10 19:52:29) [POST]
+  Parameters: {"edit"=>"true", "commit"=>"Update", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "username"=>"temp.nav.chat", "id"=>"1", "password"=>"tempnavchat"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.9ms)
+Rendered accounts/_message_acc (0.4ms)
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/1?edit=true]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 19:52:31) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 19:52:34) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (4.7ms)
+Completed in 92ms (View: 10, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 19:52:37) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 19:52:38) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (4.9ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_remove (for 127.0.0.1 at 2010-07-10 19:52:40) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mTerm Load (31.4ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms"."account_id" = '1') [0m
+Rendered terms/_remove_term (2.1ms)
+Completed in 46ms (View: 8, DB: 31) | 200 OK [http://localhost/terms/ajaxify_remove?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 19:52:41) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (4.3ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-10 19:52:43) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 19:52:44) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.6ms)
+Completed in 84ms (View: 79, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-10 19:52:48) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_new_acc (3.8ms)
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_new]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-10 19:52:56) [POST]
+  Parameters: {"authenticity_token"=>"ovMES8tGrxEfOAA2Oeg8XP3RbG4z6IXJlmv0rDdfK6E="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-11 15:40:32) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 98ms (View: 96, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 15:42:51) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (73.8ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.7ms)
+Completed in 5064ms (View: 33, DB: 74) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:01:22) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (17.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.2ms)
+Completed in 2934ms (View: 2, DB: 17) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:01:35) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (15.0ms)
+Completed in 26ms (View: 21, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:01:37) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (92.5ms)
+Completed in 122ms (View: 101, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:01:38) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (19.0ms)
+Completed in 76ms (View: 69, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?account_id=1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:01:45) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "account_id"=>"1", "str"=>"tester"}
+  [4;36;1mTerm Create (18.4ms)[0m   [0;1mINSERT INTO "terms" ("created_at", "updated_at", "account_id", "str") VALUES('2010-07-11 20:01:45', '2010-07-11 20:01:45', 1, 'tester')[0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (3.9ms)
+Rendered accounts/_index_acc (1.9ms)
+Rendered accounts/_message_acc (0.5ms)
+Completed in 46ms (View: 13, DB: 19) | 200 OK [http://localhost/terms/ajaxify_new?new=true]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:01:47) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.2ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_remove (for 127.0.0.1 at 2010-07-11 16:01:48) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mTerm Load (0.3ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms"."account_id" = '1') [0m
+Rendered terms/_remove_term (3.8ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/terms/ajaxify_remove?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:01:51) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.3ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:01:53) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:01:55) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (3.7ms)
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?account_id=1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:02:01) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "account_id"=>"1", "str"=>"hiya,woah"}
+  [4;35;1mTerm Create (0.4ms)[0m   [0mINSERT INTO "terms" ("created_at", "updated_at", "account_id", "str") VALUES('2010-07-11 20:02:01', '2010-07-11 20:02:01', 1, 'hiya')[0m
+  [4;36;1mTerm Create (0.4ms)[0m   [0;1mINSERT INTO "terms" ("created_at", "updated_at", "account_id", "str") VALUES('2010-07-11 20:02:01', '2010-07-11 20:02:01', 1, 'woah')[0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (5.0ms)
+Rendered accounts/_index_acc (1.7ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 27ms (View: 10, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?new=true]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:02:03) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_remove (for 127.0.0.1 at 2010-07-11 16:02:05) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mTerm Load (0.3ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms"."account_id" = '1') [0m
+Rendered terms/_remove_term (5.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/terms/ajaxify_remove?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:02:06) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (85.4ms)
+Completed in 92ms (View: 87, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:02:50) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+
+NoMethodError (undefined method `from_to_s' for #<Mail::Message:0x103787928>):
+  mail (2.2.5) lib/mail/message.rb:1251:in `method_missing'
+  lib/script.rb:76:in `match'
+  lib/script.rb:33:in `get_mail'
+  lib/script.rb:32:in `each'
+  lib/script.rb:32:in `get_mail'
+  lib/script.rb:12:in `each'
+  lib/script.rb:12:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (37.3ms)
+Rendered rescues/_request_and_response (18.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:04:49) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (13.9ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.6ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 2492ms (View: 2, DB: 15) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:08:01) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (24.2ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 4184ms (View: 2, DB: 25) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:11:13) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (16.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 3127ms (View: 2, DB: 17) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:20:02) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (12.6ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mTerm Load (0.5ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.2ms)
+Completed in 2913ms (View: 2, DB: 13) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:32:17) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (15.7ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+
+NameError (undefined local variable or method `result' for #<MessagesController:0x1033610b0>):
+  lib/script.rb:45:in `get_mail'
+  lib/script.rb:12:in `each'
+  lib/script.rb:12:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (115.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:32:29) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1547ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:33:16) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+
+NameError (undefined local variable or method `result' for #<MessagesController:0x103638608>):
+  lib/script.rb:45:in `get_mail'
+  lib/script.rb:12:in `each'
+  lib/script.rb:12:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:35:41) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+
+NameError (uninitialized class variable @@result in Script):
+  lib/script.rb:45:in `get_mail'
+  lib/script.rb:12:in `each'
+  lib/script.rb:12:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:36:56) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (32.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.count):
+  lib/script.rb:99:in `form_result_message'
+  lib/script.rb:45:in `get_mail'
+  lib/script.rb:12:in `each'
+  lib/script.rb:12:in `get_mail'
+  app/controllers/messages_controller.rb:21:in `eval'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#eval (for 127.0.0.1 at 2010-07-11 16:39:00) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+
+SyntaxError (/Users/krokhale/code/reader/lib/script.rb:46: syntax error, unexpected kELSE, expecting kEND
+/Users/krokhale/code/reader/lib/script.rb:145: syntax error, unexpected $end, expecting kEND):
+  app/controllers/messages_controller.rb:4
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:40:07) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 3275ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:41:03) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 21971ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:41:25) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1652ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:41:57) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.3ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:41:59) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (4.9ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_remove (for 127.0.0.1 at 2010-07-11 16:42:01) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mTerm Load (1.1ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms"."account_id" = '1') [0m
+Rendered terms/_remove_term (5.3ms)
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/terms/ajaxify_remove?account_id=1]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:42:03) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:42:09) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 2457ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:44:24) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mTerm Load (0.4ms)[0m   [0;1mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 2847ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:45:13) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.5ms)
+Completed in 89ms (View: 5, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:45:15) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1958ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:46:27) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:46:29) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (4.9ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-11 16:46:35) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_edit_acc (4.5ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/1]
+
+
+Processing AccountsController#ajaxify_edit (for 127.0.0.1 at 2010-07-11 16:46:39) [POST]
+  Parameters: {"edit"=>"true", "commit"=>"Update", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "username"=>"temp.nav.chat", "id"=>"1", "password"=>"tempnavchat"}
+  [4;35;1mAccount Load (0.2ms)[0m   [0mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.8ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_edit/1?edit=true]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:46:53) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.5ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 3567ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:48:05) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (18.1ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.8ms)
+Completed in 29ms (View: 6, DB: 18) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:48:29) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.6ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 3775ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:48:50) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.5ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.8ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:48:54) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1576ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (22.1ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDROP TABLE "terms"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "terms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "str" varchar(255), "created_at" datetime, "updated_at" datetime, "account_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-07-11 16:49:17) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:49:18) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:49:20) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:49:24) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.2ms)
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:49:26) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.4ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_new_acc (3.7ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_new]
+
+
+Processing AccountsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:49:32) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "username"=>"temp.nav.chat", "password"=>"tempnavchat"}
+  [4;36;1mAccount Create (0.3ms)[0m   [0;1mINSERT INTO "accounts" ("created_at", "updated_at", "username", "password") VALUES('2010-07-11 20:49:32', '2010-07-11 20:49:32', 'temp.nav.chat', 'tempnavchat')[0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (1.8ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/accounts/ajaxify_new?new=true]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:49:34) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 1836ms (View: 2, DB: 0) | 200 OK [http://localhost/messages/eval]
+
+
+Processing AccountsController#ajaxify_index (for 127.0.0.1 at 2010-07-11 16:50:07) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+Rendered accounts/_index_acc (3.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/ajaxify_index]
+
+
+Processing AccountsController#ajaxify (for 127.0.0.1 at 2010-07-11 16:50:08) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "id"=>"1"}
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered accounts/_ajaxify_acc (5.1ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/ajaxify/1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:50:09) [POST]
+  Parameters: {"account_id"=>"1", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (3.8ms)
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?account_id=1]
+
+
+Processing TermsController#ajaxify_new (for 127.0.0.1 at 2010-07-11 16:50:16) [POST]
+  Parameters: {"new"=>"true", "commit"=>"Create", "authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY=", "account_id"=>"1", "str"=>"hiya,woah"}
+  [4;35;1mTerm Create (0.3ms)[0m   [0mINSERT INTO "terms" ("created_at", "updated_at", "account_id", "str") VALUES('2010-07-11 20:50:16', '2010-07-11 20:50:16', 1, 'hiya')[0m
+  [4;36;1mTerm Create (0.3ms)[0m   [0;1mINSERT INTO "terms" ("created_at", "updated_at", "account_id", "str") VALUES('2010-07-11 20:50:16', '2010-07-11 20:50:16', 1, 'woah')[0m
+  [4;35;1mAccount Load (0.3ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+Rendered terms/_new_term (4.3ms)
+Rendered accounts/_index_acc (1.8ms)
+Rendered accounts/_message_acc (0.1ms)
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/terms/ajaxify_new?new=true]
+
+
+Processing MessagesController#eval (for 127.0.0.1 at 2010-07-11 16:51:22) [POST]
+  Parameters: {"authenticity_token"=>"F3fvaDeK+UZKHXXa3Vw3sSUxlHei5RUF3LdNx6gAeLY="}
+  [4;35;1mAccount Load (0.5ms)[0m   [0mSELECT * FROM "accounts" [0m
+  [4;36;1mAccount Load (0.4ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mTerm Load (0.4ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accounts" WHERE ("accounts"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "terms" WHERE ("terms".account_id = 1) [0m
+Rendered messages/_show_results (0.1ms)
+Completed in 3539ms (View: 2, DB: 1) | 200 OK [http://localhost/messages/eval]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDROP TABLE "accounts"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (35.1ms)[0m   [0mDROP TABLE "terms"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "terms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "str" varchar(255), "created_at" datetime, "updated_at" datetime, "account_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
